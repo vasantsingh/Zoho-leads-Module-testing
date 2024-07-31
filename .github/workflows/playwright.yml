@@ -26,6 +26,11 @@ jobs:
         env:
           NODE_ENV: development  # Explicitly set the environment if needed
 
+      - name: Install Playwright browsers
+        run: npx playwright install
+        env:
+          NODE_ENV: development  # Explicitly set the environment if needed
+
       - name: Run Playwright tests
         run: npm run zoho-leads-module-testing
         env:
