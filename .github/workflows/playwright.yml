@@ -3,42 +3,36 @@ name: Run Playwright Tests
 on:
   push:
     branches:
-      - master  # Adjust to your default branch if necessary
+      - master
   pull_request:
     branches:
-      - master  # Adjust to your default branch if necessary
+      - master
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Updated to v4
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4  # Updated to v4
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'  # Ensure Node.js 20 is used
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
-        env:
-          NODE_ENV: development  # Explicitly set the environment if needed
 
       - name: Install Playwright browsers
         run: npx playwright install
-        env:
-          NODE_ENV: development  # Explicitly set the environment if needed
 
       - name: Run Playwright tests
         run: npm run zoho-leads-module-testing
-        env:
-          NODE_ENV: test  # Set the environment for test execution if needed
 
       - name: Upload Playwright test results
-        if: always()  # Ensure results are uploaded even if tests fail
-        uses: actions/upload-artifact@v4  # Updated to v4
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-test-results
-          path: ./playwright-report  # Adjust if your Playwright report path is different
+          path: ./playwright-report
