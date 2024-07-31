@@ -5,7 +5,7 @@ export default defineConfig({
     timeout: 70000,
     use: {
         browserName: 'chromium',
-        headless: false,
+        headless: true,
         baseURL: 'https://www.zoho.com/en-in/crm/',
         trace: 'on',
         actionTimeout: 10000, 
