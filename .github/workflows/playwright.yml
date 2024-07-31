@@ -22,8 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        run: npm install faker.js
-        run: npm install playwright
+        
 
       - name: Run Playwright tests
         run: npm run zoho-leads-module-testing
