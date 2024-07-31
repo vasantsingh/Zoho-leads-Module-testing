@@ -3,10 +3,10 @@ name: Run Playwright Tests
 on:
   push:
     branches:
-      - master  # Adjust this to match your default branch if necessary
+      - master  # Adjust to your default branch if necessary
   pull_request:
     branches:
-      - master  # Adjust this to match your default branch if necessary
+      - master  # Adjust to your default branch if necessary
 
 jobs:
   test:
@@ -14,12 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1  # Fetch only the latest commit to speed up the workflow
+        uses: actions/checkout@v4  # Updated to v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Updated to v4
         with:
           node-version: '20'  # Ensure Node.js 20 is used
 
@@ -35,7 +33,7 @@ jobs:
 
       - name: Upload Playwright test results
         if: always()  # Ensure results are uploaded even if tests fail
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Updated to v4
         with:
           name: playwright-test-results
           path: ./playwright-report  # Adjust if your Playwright report path is different
