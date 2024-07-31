@@ -1,10 +1,10 @@
 export const urls = {
     base: 'https://www.zoho.com/en-in/crm/',
-    leads: 'https://crm.zoho.in/crm/org60031343040/tab/Home/begin',
+    leads: 'https://crm.zoho.in/crm/org60031319229/tab/Home/begin',
 }
 
 export const loginData = {
-    username: ' thisisvasant@gmail.com',
+    username: 'vasant.singh@propine.com',
     password: '123@Anandsingh',
 }
 
